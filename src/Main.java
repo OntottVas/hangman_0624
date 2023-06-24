@@ -8,7 +8,7 @@ public class Main {
         charInicialize(charArray);
 
         Scanner scanner = new Scanner(System.in);
-        while (!win(result, charArray)) {
+        while (win(charArray)) {
             Character character = scanner.nextLine().charAt(0);
 
             if (character == '0') {
@@ -59,13 +59,8 @@ public class Main {
     //TODO metódus character check -re
 
 
-    public static boolean win(String result, char[] charArray) {
-        String match = "";
-        for (char c : charArray) {
-            match += c;
-        }
-
-        return match.equals(result);
+    public static boolean win(char[] charArray) {
+        return  Arrays.toString(charArray).contains("_");
     }
 
 }
