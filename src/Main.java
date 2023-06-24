@@ -8,10 +8,10 @@ public class Main {
         charInicialize(charArray);
 
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        while (!win(result, charArray)) {
             Character character = scanner.nextLine().charAt(0);
 
-            if(character == '0') {
+            if (character == '0') {
                 break;
             }
 
@@ -23,7 +23,7 @@ public class Main {
             System.out.println(Arrays.toString(charArray));
 
         }
-
+        System.out.println("Congratulations, you won!");
 
         // beolvasni
         // k -> YES
@@ -58,5 +58,14 @@ public class Main {
 
     //TODO metódus character check -re
 
+
+    public static boolean win(String result, char[] charArray) {
+        String match = "";
+        for (char c : charArray) {
+            match += c;
+        }
+
+        return match.equals(result);
+    }
 
 }
