@@ -1,11 +1,28 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         String result = "kecske";
+        char[] charArray = new char[result.length()];
 
-        Scanner scanner = new Scanner();
-
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            Character character = scanner.nextLine().charAt(0);
+            if (result.contains(character.toString())) {
+                System.out.println("YES");
+                for (int i = 0; i < charArray.length; i++) {
+                    if(character == result.charAt(i)) {
+                        charArray[i] = character;
+                    } else {
+                        charArray[i] = '-';
+                    }
+                }
+                System.out.println(Arrays.toString(charArray));
+            } else {
+                System.out.println("NO");
+            }
+        }
 
 
         // beolvasni
@@ -15,7 +32,7 @@ public class Main {
 
     }
 
-    public boolean characterCheck(String result) {
+    /*public boolean characterCheck(String result) {
         boolean win = false;
         while (!win) {
             System.out.println("Give me a letter.");
@@ -23,9 +40,8 @@ public class Main {
 
             boolean match = false;
             for (int i = 0; i < result.length(); i++) {
-                if (result.charAt(i) == )
+                if (result.charAt(i) ==)
             }
-
         }
-    }
+    }*/
 }
